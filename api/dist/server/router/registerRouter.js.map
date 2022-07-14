@@ -1,0 +1,1 @@
+{"version":3,"file":"registerRouter.js","sourceRoot":"","sources":["../../../server/router/registerRouter.ts"],"names":[],"mappings":";;;;;AAAA,sDAAwC;AAExC,MAAM,cAAc;IAGhB,YAAY,GAAG;QACX,IAAI,CAAC,GAAG,GAAG,GAAG,CAAC;IACnB,CAAC;IAED,cAAc;QACV,IAAI,CAAC,GAAG,CAAC,GAAG,CAAC,gBAAgB,CAAC,CAAC;IACnC,CAAC;CACJ;AAED,kBAAe,cAAc,CAAC"}
