@@ -1,11 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class TeacherController {
-    get(req, res) {
-        res.send("Hello Teacher!");
+    constructor() {
+    }
+    get(_, res) {
+        res.send('hello world fffggg ');
     }
     ;
-    post() {
+    getById(_, res) {
+    }
+    post(req, res) {
+        res.send('teacher post nodemon');
     }
     ;
     update() {

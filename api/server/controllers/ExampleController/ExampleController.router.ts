@@ -1,10 +1,11 @@
 import ExampleController from './ExampleController.controller';
-import Routes from '../../router/routes';
+// import Routes from '../../router/routes';
+import { IRouteInterface } from '../../router/RouterInterface';
 export class ExampleControllerRouter {
-    getRoutes: Array<{'url': string, 'handler': any}>;
+    getRoutes: Array<IRouteInterface>;
     constructor() {
         this.getRoutes = [
-            {url: '/', handler: new ExampleController().getAllExamples}
+            {method: 'get', url: '/', handler: new ExampleController().getAllExamples}
         ]
     }
 

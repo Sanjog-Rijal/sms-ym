@@ -3,7 +3,7 @@ interface IMiddleware {
     unregisterMiddleware();
 }
 
-class Middleware implements IMiddleware{
+export class Middleware implements IMiddleware{
     app: any;
     middlewareInstances: Array<any>;
     
@@ -19,8 +19,7 @@ class Middleware implements IMiddleware{
     }
 
     unregisterMiddleware = () => {
-
+        this.middlewareInstances.forEach((data: any) => {
+        })
     }
 }
-
-export default Middleware;

@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const dependency_1 = __importDefault(require("./dependency/dependency"));
-const middleware_1 = __importDefault(require("./dependency/middleware"));
+const dependency_1 = require("./dependency/dependency");
+const useMiddleware_1 = require("./dependency/useMiddleware");
 const registerRouter_1 = __importDefault(require("./router/registerRouter"));
 class Server {
     constructor() {
@@ -14,7 +14,7 @@ class Server {
         this.registerDependency = this.registerDependency.bind(this);
     }
     middlewareRegistration() {
-        let registerMiddleware = new middleware_1.default(this.app, [(0, cors_1.default)()]);
+        let registerMiddleware = new useMiddleware_1.Middleware(this.app, [(0, cors_1.default)()]);
         try {
             registerMiddleware.registerMiddleware();
         }
@@ -27,7 +27,7 @@ class Server {
         Register.registerRoutes();
     }
     registerDependency() {
-        const dependency = new dependency_1.default();
+        const dependency = new dependency_1.Dependency();
         dependency.dotEnvRegister();
     }
     startServer(port) {

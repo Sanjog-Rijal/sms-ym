@@ -1,8 +1,6 @@
 import dotenv from 'dotenv';
-import cors from 'cors';
-import { appendFile } from 'fs';
 
-class Dependency{
+export class Dependency{
 	app: any;
 	dependencyInstance: any;
 	constructor(){
@@ -12,5 +10,3 @@ class Dependency{
 		return dotenv.config();
 	}
 }
-
-export default Dependency;

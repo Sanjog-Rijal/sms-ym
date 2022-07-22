@@ -8,10 +8,11 @@ const teacher_controller_1 = __importDefault(require("./teacher.controller"));
 class TeacherRouter {
     constructor() {
         this.returnRoutes = () => {
-            return this.getRoutes;
+            return this.teacherRoutes;
         };
-        this.getRoutes = [
-            { url: '/teacher', handler: new teacher_controller_1.default().get }
+        this.teacherRoutes = [
+            { method: 'get', url: '/teacher', handler: new teacher_controller_1.default().get },
+            { method: 'post', url: '/teacher', handler: new teacher_controller_1.default().post }
         ];
     }
 }

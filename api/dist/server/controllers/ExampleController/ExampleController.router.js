@@ -11,7 +11,7 @@ class ExampleControllerRouter {
             return this.getRoutes;
         };
         this.getRoutes = [
-            { url: '/', handler: new ExampleController_controller_1.default().getAllExamples }
+            { method: 'get', url: '/', handler: new ExampleController_controller_1.default().getAllExamples }
         ];
     }
 }

@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import Dependency from './dependency/dependency';
-import Middleware from './dependency/middleware';
+import {Dependency} from './dependency/dependency';
+import {Middleware} from './dependency/useMiddleware';
 import RegisterRouter from './router/registerRouter';
 
 class Server {

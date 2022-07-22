@@ -1,14 +1,18 @@
 import TeacherController from './teacher.controller';
+import {IRouteInterface} from '../../router/RouterInterface';
+
 export class TeacherRouter {
-    getRoutes: Array<{'url': string, 'handler': any}>;
+    teacherRoutes: Array<IRouteInterface>;
     constructor() {
-        this.getRoutes = [
-            {url: '/teacher', handler: new TeacherController().get}
+        this.teacherRoutes = [
+            {method: 'get', url: '/teacher', handler: new TeacherController().get}, 
+            {method: 'post', url: '/teacher', handler: new TeacherController().post}
         ]
+        
     }
 
     returnRoutes = () => {
-        return this.getRoutes;
+        return this.teacherRoutes;
     }
 }
 

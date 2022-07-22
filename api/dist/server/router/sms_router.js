@@ -4,14 +4,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const routes_util_1 = __importDefault(require("./routes.util"));
+const ExampleController_router_1 = require("../controllers/ExampleController/ExampleController.router");
+const teacher_router_1 = __importDefault(require("../controllers/Teacher/teacher.router"));
 //Middle ware that is specific to this router
-class Routes {
+class SMSRouter {
     constructor(router) {
         this.router = router;
         this.registerRoutes = () => {
-            console.log("MAIN IS: " + routes_util_1.default);
-            routes_util_1.default.forEach((route) => {
+            console.log("MAIN IS: " + this.routings);
+            this.routings.forEach((route) => {
                 switch (route.method) {
                     case 'get':
                         this.router.get(route.url, route.handler);
@@ -33,8 +34,8 @@ class Routes {
             });
         };
         this.registerPostRoutes = () => {
-            console.log("MAIN IS: " + routes_util_1.default);
-            routes_util_1.default.forEach((route) => {
+            console.log("MAIN IS: " + this.routings);
+            this.routings.forEach((route) => {
                 this.router.post(route.url, route.handler);
                 return this.router;
             });
@@ -44,7 +45,11 @@ class Routes {
             return this.router;
         };
         this.main = this.main.bind(this);
+        let routers = [];
+        this.exampleRouter = new ExampleController_router_1.ExampleControllerRouter().returnRoutes();
+        this.teacherRouter = new teacher_router_1.default().returnRoutes();
+        this.routings = [...this.exampleRouter, ...this.teacherRouter];
     }
 }
-exports.default = new Routes((0, express_1.default)()).main();
-//# sourceMappingURL=routes.js.map
+exports.default = new SMSRouter((0, express_1.default)()).main();
+//# sourceMappingURL=sms_router.js.map

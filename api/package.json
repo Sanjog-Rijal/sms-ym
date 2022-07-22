@@ -1,11 +1,12 @@
 {
+  
   "name": "api",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "tsc && node ./dist/index.js",
-    "dev": "node ts --exec 'npm run start'",
+    "start": "tsc && nodemon ./dist/index.js",
+    "dev": "nodemon ts --exec 'npm run start'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

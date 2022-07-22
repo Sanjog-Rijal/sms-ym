@@ -1,14 +1,23 @@
-import IController from "../controller.interface";
-import {Request, Response} from 'express';
+import {IController} from "../controller.interface";
+import {Request, response, request,Response} from 'express';
+
+
 
 class TeacherController implements IController {
-
-    get(req: Request, res: Response){
-        res.send("Hello Teacher!")
+    
+    constructor() {
+    }
+    
+    get(_: Request, res: Response){
+        res.send('hello world fffggg ');
     };
 
-    post() {
+    getById(_: any, res: any) {
         
+    }
+
+    post(req: Request, res: Response) {
+        res.send('teacher post nodemon');        
     };
     
     update(){

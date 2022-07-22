@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Dependency = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 class Dependency {
     constructor() {
@@ -11,5 +12,5 @@ class Dependency {
         };
     }
 }
-exports.default = Dependency;
+exports.Dependency = Dependency;
 //# sourceMappingURL=dependency.js.map

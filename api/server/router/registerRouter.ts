@@ -1,4 +1,4 @@
-import registeredRoutes from './routes';
+import registeredRoutes from './sms_router';
 
 class RegisterRouter {
     router;
